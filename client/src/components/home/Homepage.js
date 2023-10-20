@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from "reactstrap";
-import { getColors } from '../managers/colormanager.js';
-import ColorForRecordsImageCard from './colors/ColorForRecordsImageCard.js';
+import { getColors } from '../../managers/colormanager.js';
+import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 
 export default function HomePage() {
     const [colors, setColors] = useState([]);

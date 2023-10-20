@@ -3,9 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import { AuthorizedRoute } from "./auth/AuthorizedRoute";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-import Homepage from "./Homepage.js";
 import RecordOrderForm from "./orders/RecordOrderForm.js";
 import OrderDetails from "./orders/OrderDetails.js";
+import HomePage from "./home/Homepage.js";
+import AddARecordToAnOrder from "./orders/AddARecordToAnOrder.js";
 
 
 // import UserProfileList from "./userprofiles/UserProfileList.js";
@@ -18,7 +19,7 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           index
           element={
             // <AuthorizedRoute loggedInUser={loggedInUser}>
-            <Homepage />
+            <HomePage />
             // </AuthorizedRoute>
           }
         />
@@ -40,7 +41,17 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
               </AuthorizedRoute>
             }
           />
+
         </Route>
+        <Route
+          path="addtoorder/:id"
+          index
+          element={
+            <AuthorizedRoute loggedInUser={loggedInUser}>
+              <AddARecordToAnOrder />
+            </AuthorizedRoute>
+          }
+        />
         <Route
           path="employees"
           element={

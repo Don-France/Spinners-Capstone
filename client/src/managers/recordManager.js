@@ -4,6 +4,7 @@ export const getRecords = () => {
     return fetch(_apiUrl).then((res) => res.json());
 };
 
+//Create a record order
 export const createRecord = async (newRecord) => {
     console.log(newRecord);
     try {
@@ -28,3 +29,31 @@ export const createRecord = async (newRecord) => {
         throw error; // Optionally rethrow the error for handling at a higher level
     }
 };
+
+// Add a record to an order
+export const addRecord = (id, newRecord) => {
+    console.log(newRecord)
+
+    return fetch(`${_apiUrl}/${id}/add`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newRecord),
+    })
+        .then((response) => {
+            // console.log(response)
+            console.log('Response status:', response.status); // Log the status code
+            // console.log(newPizza);
+
+            if (!response.ok) {
+                console.log('Response text:', response.text()); // Log the response text
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.log('Error:', error); // Log the error
+            throw error;
+        });
+}
