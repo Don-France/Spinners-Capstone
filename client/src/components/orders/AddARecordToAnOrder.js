@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getColors } from '../../managers/colormanager.js';
-import { createRecord } from '../../managers/recordManager.js';
+import { addRecord } from '../../managers/recordManager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Card, CardTitle, CardSubtitle, CardBody, CardText, Button } from "reactstrap";
 
 
 
-export default function RecordOrderForm({ loggedInUser }) {
+export default function AddARecordToAnOrder({ loggedInUser }) {
 
     const [colors, setColors] = useState([]); // State for color option
 
@@ -18,7 +17,7 @@ export default function RecordOrderForm({ loggedInUser }) {
         quantity: 50
     });
     const navigate = useNavigate();
-    // const { id } = useParams();
+    const { id } = useParams();
 
 
 
@@ -82,14 +81,13 @@ export default function RecordOrderForm({ loggedInUser }) {
 
         };
 
+        addRecord(id, newRecord)
+            .then(() => {
+                navigate(`/neworder/orders/${id}`)
+
+            });
 
 
-        createRecord(newRecord)
-            .then((newlyCreatedRecord) => {
-                console.log(newlyCreatedRecord)
-                const id = newlyCreatedRecord.orderId;
-                navigate(`orders/${id}`);
-            })
     };
 
     return (
