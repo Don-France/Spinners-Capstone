@@ -8,6 +8,7 @@ import OrderDetails from "./orders/OrderDetails.js";
 import HomePage from "./home/Homepage.js";
 import AddARecordToAnOrder from "./orders/AddARecordToAnOrder.js";
 import EditRecordInOrder from "./orders/EditRecordInOrder.js";
+import AdminDeleteAColor from "./admin/AdminDeleteAColor.js";
 
 
 // import UserProfileList from "./userprofiles/UserProfileList.js";
@@ -63,11 +64,11 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           }
         />
         <Route
-          path="employees"
+          path="colors"
           element={
             <AuthorizedRoute roles={["Admin"]} loggedInUser={loggedInUser}>
-              <p>Employees</p>
-              {/* <UserProfileList /> */}
+
+              <AdminDeleteAColor />
             </AuthorizedRoute>
           }
         />

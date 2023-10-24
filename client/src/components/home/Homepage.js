@@ -28,9 +28,11 @@ export default function HomePage() {
             </Row>
             <Row className="mt-3">
                 <Col>
+
                     <Link to="/neworder">
                         <button className="btn btn-primary">New Order</button>
                     </Link>
+
                 </Col>
             </Row>
         </Container>
