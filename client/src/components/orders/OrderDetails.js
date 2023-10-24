@@ -37,8 +37,17 @@ export default function OrderDetails() {
                     <CardText>
                         Order Date: {new Date(order.orderDate).toLocaleDateString()}
                     </CardText>
+                    <Button
+                        color="dark"
+                        onClick={() => {
+                            navigate(`/addtoorder/${id}`);
+                        }}
+                    >
+                        Add More Records
+                    </Button>
+
                 </CardBody>
-                {/* <Link to={`/pizzas/${order.id}/addpizza`}>Add Pizza</Link> */}
+
             </Card>
             <h4>Records</h4>
             {order?.records?.map((records, index) => (
@@ -57,14 +66,15 @@ export default function OrderDetails() {
                                 {recordColor.color.name}
                             </div>
                         ))}</CardText>
+                        <CardText>Quantity: {records?.quantity}</CardText>
                         <CardText>Total: ${order?.total}</CardText>
                         <Button
                             color="dark"
                             onClick={() => {
-                                navigate(`/addtoorder/${id}`);
+                                navigate(`/updateorder/${order.id}/${records.id}`);
                             }}
                         >
-                            Add More Records
+                            Update This Record
                         </Button>
                     </CardBody>
                 </Card>

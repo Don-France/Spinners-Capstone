@@ -4,9 +4,13 @@ export const getRecords = () => {
     return fetch(_apiUrl).then((res) => res.json());
 };
 
+export const getRecordById = (id) => {
+    return fetch(`${_apiUrl}/${id}`).then((res) => res.json());
+}
+
 //Create a record order
 export const createRecord = async (newRecord) => {
-    console.log(newRecord);
+
     try {
         const response = await fetch(`${_apiUrl}/create`, {
             method: "POST",
@@ -17,8 +21,7 @@ export const createRecord = async (newRecord) => {
         });
 
         if (!response.ok) {
-            console.log(response);
-            console.log(newRecord)
+
             throw new Error("Failed to create record");
         }
 
@@ -42,9 +45,38 @@ export const addRecord = (id, newRecord) => {
         body: JSON.stringify(newRecord),
     })
         .then((response) => {
-            // console.log(response)
+
             console.log('Response status:', response.status); // Log the status code
-            // console.log(newPizza);
+
+
+            if (!response.ok) {
+                console.log('Response text:', response.text()); // Log the response text
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.log('Error:', error); // Log the error
+            throw error;
+        });
+
+
+}
+
+export const updateRecord = (id, record) => {
+
+
+    return fetch(`${_apiUrl}/${id}/update`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(record),
+    })
+        .then((response) => {
+
+            console.log('Response status:', response.status); // Log the status code
+
 
             if (!response.ok) {
                 console.log('Response text:', response.text()); // Log the response text

@@ -7,6 +7,7 @@ import RecordOrderForm from "./orders/RecordOrderForm.js";
 import OrderDetails from "./orders/OrderDetails.js";
 import HomePage from "./home/Homepage.js";
 import AddARecordToAnOrder from "./orders/AddARecordToAnOrder.js";
+import EditRecordInOrder from "./orders/EditRecordInOrder.js";
 
 
 // import UserProfileList from "./userprofiles/UserProfileList.js";
@@ -49,6 +50,15 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           element={
             <AuthorizedRoute loggedInUser={loggedInUser}>
               <AddARecordToAnOrder />
+            </AuthorizedRoute>
+          }
+        />
+        <Route
+          path="updateorder/:orderId/:recordId"
+          index
+          element={
+            <AuthorizedRoute loggedInUser={loggedInUser} >
+              <EditRecordInOrder />
             </AuthorizedRoute>
           }
         />
