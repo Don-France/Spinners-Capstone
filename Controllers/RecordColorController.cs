@@ -18,7 +18,7 @@ public class RecordColorController : ControllerBase
     }
 
     [HttpGet]
-    // [Authorize]
+    [Authorize]
     public IActionResult Get()
     {
         return Ok(_dbContext.RecordColors.ToList());

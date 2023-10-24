@@ -18,14 +18,14 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet]
-    // [Authorize]
+    [Authorize]
     public IActionResult Get()
     {
         return Ok(_dbContext.Orders.ToList());
     }
 
     [HttpGet("{id}")]
-    // [Authorize]
+    [Authorize]
     public IActionResult GetById(int id)
     {
         Order order = _dbContext
