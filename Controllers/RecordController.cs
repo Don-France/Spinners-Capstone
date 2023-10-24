@@ -25,6 +25,20 @@ public class RecordController : ControllerBase
         return Ok(_dbContext.Records.ToList());
     }
 
+    [HttpGet("{id}")]
+    // [Authorize]
+    public IActionResult GetRecordById(int id)
+    {
+        Record recordToGet = _dbContext.Records
+        .Include(r => r.RecordColors)
+        .FirstOrDefault(r => r.Id == id);
+        if (recordToGet == null)
+        {
+            return NotFound();
+        }
+        return Ok(recordToGet);
+    }
+
     [HttpPost("create")]
     [Authorize]
     public IActionResult CreateARecordOrder([FromBody] Record record)
@@ -121,6 +135,51 @@ public class RecordController : ControllerBase
         return Ok(newRecord);
     }
 
+
+
+    [HttpPut("{id}/update")]
+    // [Authorize]
+    public IActionResult UpdateARecordOrder(int id, [FromBody] Record record)
+    {
+        var recordToUpdate = _dbContext.Records
+            .Include(r => r.RecordColors)
+            .FirstOrDefault(r => r.Id == id);
+
+        if (recordToUpdate == null)
+        {
+            return NotFound();
+        }
+
+        // Update the properties of the existing record with values from the incoming record
+        recordToUpdate.RecordWeightId = record.RecordWeightId;
+        recordToUpdate.SpecialEffectId = record.SpecialEffectId;
+        recordToUpdate.Quantity = record.Quantity;
+        recordToUpdate.OrderId = record.OrderId;
+
+        // Update existing RecordColors based on client choices
+        if (record.RecordColors != null && record.RecordColors.Any())
+        {
+            recordToUpdate.RecordColors.Clear();
+
+            foreach (var colorChoice in record.RecordColors)
+            {
+                var color = _dbContext.Colors.Find(colorChoice.ColorId);
+                if (color != null)
+                {
+                    recordToUpdate.RecordColors.Add(new RecordColor { ColorId = colorChoice.ColorId });
+                }
+            }
+        }
+
+        _dbContext.SaveChanges();
+
+        // Fetch the updated record with its RecordColors
+        var updatedRecord = _dbContext.Records
+            .Include(r => r.RecordColors)
+            .FirstOrDefault(r => r.Id == id);
+
+        return Ok(updatedRecord);
+    }
 
 
 }

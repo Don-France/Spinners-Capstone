@@ -18,7 +18,6 @@ export default function RecordOrderForm({ loggedInUser }) {
         quantity: 50
     });
     const navigate = useNavigate();
-    // const { id } = useParams();
 
 
 
@@ -35,12 +34,12 @@ export default function RecordOrderForm({ loggedInUser }) {
         const isChecked = event.target.checked;
 
         if (isChecked) {
-            // setRecordColor([...recordColor, colorId]);
+
             record.recordColors.push({ colorId: colorId })
 
         }
         else {
-            // setRecordColor(record.recordColor.filter((id) => id !== colorId));
+
             record.recordColors.splice(record.recordColors.indexOf({ colorId: colorId }), 1);
 
         }
@@ -66,7 +65,7 @@ export default function RecordOrderForm({ loggedInUser }) {
     const handleOrderSubmit = (event) => {
         event.preventDefault();
         console.log("Submit button clicked");
-        // console.log("Weight:", record.weightId);
+
         console.log("Special Effect:", record.specialEffectId);
         console.log("RecordColor:", record.recordColors);
 
@@ -107,7 +106,7 @@ export default function RecordOrderForm({ loggedInUser }) {
                                 value={colorOption.id}
                                 onChange={handleColorChange}
                             />
-                            {/* {colorOption.name} */}
+
                         </label>
                     ))}
                 </div>

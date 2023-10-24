@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { getColors } from '../../managers/colormanager.js';
-import { addRecord } from '../../managers/recordManager.js';
+import { updateRecord, getRecordById } from '../../managers/recordManager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 import { useNavigate, useParams } from 'react-router-dom';
 
 
 
-export default function AddARecordToAnOrder({ loggedInUser }) {
-
-    const [colors, setColors] = useState([]); // State for color option
-
+// New update form as of 10/23/23
+export default function EditRecordInOrder({ loggedInUser }) {
+    const [colors, setColors] = useState([]);
     const [record, setRecord] = useState({
         recordWeightId: 1,
         specialEffectId: 1,
@@ -17,80 +16,56 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
         quantity: 50
     });
     const navigate = useNavigate();
-    const { id } = useParams();
-
-
-
+    const { recordId, orderId } = useParams();
 
     useEffect(() => {
-
         getColors().then((data) => setColors(data));
-    }, []);
 
-
+        // Fetch the existing record data for editing
+        getRecordById(recordId).then((data) => setRecord(data));
+    }, [recordId]);
 
     const handleColorChange = (event) => {
         const colorId = parseInt(event.target.value);
         const isChecked = event.target.checked;
 
         if (isChecked) {
-            // Push the color selections to the recordColor array
-            record.recordColors.push({ colorId: colorId })
-
+            record.recordColors.push({ colorId: colorId });
+        } else {
+            record.recordColors = record.recordColors.filter(
+                (color) => color.colorId !== colorId
+            );
         }
-        else {
-            // Find the index of the selected color and remove it from the recordColor array if not checked
-            record.recordColors.splice(record.recordColors.indexOf({ colorId: colorId }), 1);
-
-        }
-        setRecord(record)
-
+        setRecord({ ...record });
     };
 
     const handleRecordWeightChange = (event) => {
         const weightId = parseInt(event.target.value);
-        setRecord({ ...record, recordWeightId: weightId })
+        setRecord({ ...record, recordWeightId: weightId });
     };
 
     const handleQuantityChange = (event) => {
         const quantityInput = parseInt(event.target.value);
-        setRecord({ ...record, quantity: quantityInput })
+        setRecord({ ...record, quantity: quantityInput });
     };
+
     const handleRecordSpecialEffectChange = (event) => {
         const effectId = parseInt(event.target.value);
-        setRecord({ ...record, specialEffectId: effectId })
+        setRecord({ ...record, specialEffectId: effectId });
     };
 
-    const handleOrderSubmit = (event) => {
+    const handleRecordUpdate = (event) => {
         event.preventDefault();
-        console.log("Submit button clicked");
-        console.log("Special Effect:", record.specialEffectId);
-        console.log("RecordColor:", record.recordColors);
 
-
-
-
-        // Create an object to represent the order with selected choices
-        const newRecord = {
-            recordColors: record.recordColors,
-            recordWeightId: record.recordWeightId,
-            quantity: record.quantity,
-            specialEffectId: record.specialEffectId
-
-        };
-
-        addRecord(id, newRecord)
-            .then(() => {
-                navigate(`/neworder/orders/${id}`)
-
-            });
-
-
+        // Update the record with the new data
+        updateRecord(recordId, record).then(() => {
+            navigate(`/neworder/orders/${orderId}`);
+        });
     };
 
     return (
         <div>
-            <h2>Create an Order</h2>
+            <h2>Edit Record in Order</h2>
             <div>
                 <label>Select Color:</label>
                 <div>
@@ -101,9 +76,11 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                                 type="checkbox"
                                 id={`color-${colorOption.id}`}
                                 value={colorOption.id}
+                                checked={record.recordColors.some(
+                                    (color) => color.colorId === colorOption.id
+                                )}
                                 onChange={handleColorChange}
                             />
-
                         </label>
                     ))}
                 </div>
@@ -112,8 +89,8 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                 <label htmlFor="weight">Select Weight:</label>
                 <select
                     id="weight"
+                    value={record.recordWeightId}
                     onChange={handleRecordWeightChange}
-
                 >
                     <option value="1">130 grams</option>
                     <option value="2">180 grams</option>
@@ -125,25 +102,23 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                     type="number"
                     id="quantity"
                     min="50"
+                    value={record.quantity}
                     onChange={handleQuantityChange}
-
                 />
             </div>
             <div>
                 <label htmlFor="specialEffect">Select Special Effect:</label>
                 <select
                     id="specialEffect"
+                    value={record.specialEffectId}
                     onChange={handleRecordSpecialEffectChange}
-
                 >
                     <option value="1">BiColor</option>
                     <option value="2">Splatter</option>
                     <option value="3">Swirl</option>
-
                 </select>
             </div>
-            <button onClick={handleOrderSubmit}>Submit an order</button>
-
+            <button onClick={handleRecordUpdate}>Update Record</button>
         </div>
     );
 }
