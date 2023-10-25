@@ -181,5 +181,21 @@ public class RecordController : ControllerBase
         return Ok(updatedRecord);
     }
 
+    [HttpDelete("{id}/delete")]
+    // [Authorize(Roles = "Admin")]
+    public IActionResult DeleteARecord(int id)
+    {
+        // IdentityRole role = _dbContext.Roles.SingleOrDefault(r => r.Name == "Admin");
+        Record recordToDelete = _dbContext.Records.SingleOrDefault(r => r.Id == id);
+        if (recordToDelete == null)
+        {
+            return NotFound();
+        }
+        _dbContext.Records.Remove(recordToDelete);
+        _dbContext.SaveChanges();
+        return NoContent();
+
+    }
+
 
 }

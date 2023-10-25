@@ -6,7 +6,7 @@ import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 
 export default function AdminDeleteAColor({ loggedInUser }) {
     const [colors, setColors] = useState([]);
-    // const isAdmin = loggedInUser && loggedInUser.roles.includes("Admin")
+
 
     useEffect(() => {
         getColors().then(setColors);
@@ -22,9 +22,10 @@ export default function AdminDeleteAColor({ loggedInUser }) {
                 if (color) {
                     // Delete the color
                     adminDeleteAColor(id).then(() => {
-                        // Update the state by removing the deleted color
+                        // Update the color state by removing the deleted color
                         setColors((prevColors) => prevColors.filter((c) => c.Id !== id));
-                        window.location.reload();
+                        getColors().then(setColors)
+
                     });
                 }
             });
@@ -53,13 +54,13 @@ export default function AdminDeleteAColor({ loggedInUser }) {
 
             </Row>
 
-            <Row className="mt-3">
+            {/* <Row className="mt-3">
                 <Col>
                     <Link to="/colors">
                         <button className="btn btn-primary">New Order</button>
                     </Link>
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     );
 };

@@ -64,10 +64,10 @@ export default function RecordOrderForm({ loggedInUser }) {
 
     const handleOrderSubmit = (event) => {
         event.preventDefault();
-        console.log("Submit button clicked");
+        // console.log("Submit button clicked");
 
-        console.log("Special Effect:", record.specialEffectId);
-        console.log("RecordColor:", record.recordColors);
+        // console.log("Special Effect:", record.specialEffectId);
+        // console.log("RecordColor:", record.recordColors);
 
 
 
@@ -85,7 +85,7 @@ export default function RecordOrderForm({ loggedInUser }) {
 
         createRecord(newRecord)
             .then((newlyCreatedRecord) => {
-                console.log(newlyCreatedRecord)
+
                 const id = newlyCreatedRecord.orderId;
                 navigate(`orders/${id}`);
             })
@@ -145,7 +145,7 @@ export default function RecordOrderForm({ loggedInUser }) {
 
                 </select>
             </div>
-            <button onClick={handleOrderSubmit}>Submit an order</button>
+            <button onClick={handleOrderSubmit}>View Your Order Details</button>
 
         </div>
     );

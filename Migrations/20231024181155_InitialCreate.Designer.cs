@@ -12,7 +12,7 @@ using SpinnersCapstone.Data;
 namespace Spinners_Capstone.Migrations
 {
     [DbContext(typeof(SpinnersCapstoneDbContext))]
-    [Migration("20231019184838_InitialCreate")]
+    [Migration("20231024181155_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "4bb1038e-131f-4b0a-b0ed-d52593ca2644",
+                            ConcurrencyStamp = "96dc7c9d-3782-4d53-8636-0a533fbb21c0",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -152,13 +152,13 @@ namespace Spinners_Capstone.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ae70b9e1-a670-445f-85ab-86e34957d932",
+                            ConcurrencyStamp = "f100a958-d1b1-4de7-b78d-ca3bdfcfc206",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEGQrh1t8gJ/kAYe57qlne4kNOhxQhfgZQCTzL2nFE3Gw6+ASnKKokPhv3DTg8C2MQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBygUopE6Mvpz+JdCg/uikyg1LuwA2e9fM+rjS2+q6fhigDNNfoWU+bAL9Nez/jh7w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "374eac0b-808e-4c62-8cf1-2cbf6fd1f356",
+                            SecurityStamp = "928335e1-7c85-446e-a11d-5f31dbb7bbc6",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         });
@@ -345,7 +345,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            OrderDate = new DateTime(2023, 10, 19, 13, 48, 37, 811, DateTimeKind.Local).AddTicks(5490),
+                            OrderDate = new DateTime(2023, 10, 24, 13, 11, 55, 358, DateTimeKind.Local).AddTicks(482),
                             UserProfileId = 1
                         });
                 });
