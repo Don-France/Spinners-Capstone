@@ -3,6 +3,14 @@ import { getColors } from '../../managers/colormanager.js';
 import { addRecord } from '../../managers/recordManager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 import { useNavigate, useParams } from 'react-router-dom';
+import {
+    Button,
+    Label,
+    Input,
+    FormGroup,
+    Form,
+    Select,
+} from 'reactstrap';
 
 
 
@@ -91,59 +99,63 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
     return (
         <div>
             <h2>Create an Order</h2>
-            <div>
-                <label>Select Color:</label>
-                <div>
-                    {colors.map((colorOption) => (
-                        <label key={colorOption.id}>
-                            <ColorForRecordsImageCard color={colorOption} />
-                            <input
-                                type="checkbox"
-                                id={`color-${colorOption.id}`}
-                                value={colorOption.id}
-                                onChange={handleColorChange}
-                            />
-
-                        </label>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <label htmlFor="weight">Select Weight:</label>
-                <select
-                    id="weight"
-                    onChange={handleRecordWeightChange}
-
-                >
-                    <option value="1">130 grams</option>
-                    <option value="2">180 grams</option>
-                </select>
-            </div>
-            <div>
-                <label htmlFor="quantity">Quantity:</label>
-                <input
-                    type="number"
-                    id="quantity"
-                    min="50"
-                    onChange={handleQuantityChange}
-
-                />
-            </div>
-            <div>
-                <label htmlFor="specialEffect">Select Special Effect:</label>
-                <select
-                    id="specialEffect"
-                    onChange={handleRecordSpecialEffectChange}
-
-                >
-                    <option value="1">BiColor</option>
-                    <option value="2">Splatter</option>
-                    <option value="3">Swirl</option>
-
-                </select>
-            </div>
-            <button onClick={handleOrderSubmit}>Submit an order</button>
-
+            <Form>
+                <FormGroup>
+                    <Label>Select Colors:</Label>
+                    <div>
+                        {colors.map((colorOption) => (
+                            <Label key={colorOption.id} check>
+                                <FormGroup check>
+                                    <Input
+                                        type="checkbox"
+                                        id={`color-${colorOption.id}`}
+                                        value={colorOption.id}
+                                        onChange={handleColorChange}
+                                    />
+                                    <ColorForRecordsImageCard color={colorOption} />
+                                </FormGroup>
+                            </Label>
+                        ))}
+                    </div>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="weight">Select Weight:</Label>
+                    <Input
+                        type="select"
+                        name="select"
+                        id="weight"
+                        onChange={handleRecordWeightChange}
+                    >
+                        <option value="1">130 grams</option>
+                        <option value="2">180 grams</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="quantity">Quantity:</Label>
+                    <Input
+                        type="number"
+                        id="quantity"
+                        min="50"
+                        onChange={handleQuantityChange}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="specialEffect">Select Special Effect:</Label>
+                    <Input
+                        type="select"
+                        name="select"
+                        id="specialEffect"
+                        onChange={handleRecordSpecialEffectChange}
+                    >
+                        <option value="1">BiColor</option>
+                        <option value="2">Splatter</option>
+                        <option value="3">Swirl</option>
+                    </Input>
+                </FormGroup>
+                <Button color="primary" onClick={handleOrderSubmit}>
+                    Submit an order
+                </Button>
+            </Form>
         </div>
     );
 }

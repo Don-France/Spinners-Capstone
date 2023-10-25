@@ -2,22 +2,42 @@ import React, { useState, useEffect } from "react";
 import { Card, CardTitle, CardSubtitle, CardBody, CardText, Button } from "reactstrap";
 import { getOrderById } from "../../managers/orderManager";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { getUserProfileById } from "../../managers/userProfileManager.js";
+import { deleteARecord } from "../../managers/recordManager.js";
 
 export default function OrderDetails() {
     const [order, setOrder] = useState({});
-    // const [records, setRecords] = useState([]);
     const { id } = useParams();
     const navigate = useNavigate();
+    const [userProfileId, setUserProfileId] = useState();
 
     const getOrderDetails = () => {
         if (id) {
-            getOrderById(id).then(setOrder);
+            getOrderById(id)
+                .then((order) => {
+                    setOrder(order);
+                    return getUserProfileById(order.userProfileId);
+                })
+                .then((userProfile) => {
+                    setUserProfileId(userProfile.id);
+                });
         }
     };
 
     useEffect(() => {
         getOrderDetails();
+        getUserProfileById().then(setUserProfileId)
     }, [id]);
+
+    const deleteRecord = (recordId) => {
+
+
+        deleteARecord(recordId)
+            .then(() => {
+                getOrderDetails();
+            })
+    };
+
 
     if (!order) {
         return (
@@ -31,12 +51,13 @@ export default function OrderDetails() {
     return (
         <>
             <h2>Order Details</h2>
-            <Card color="dark" inverse>
+            <Card color="info" inverse>
                 <CardBody>
                     <CardTitle tag="h4">Order Number: {order.id + 19000}</CardTitle>
                     <CardText>
                         Order Date: {new Date(order.orderDate).toLocaleDateString()}
                     </CardText>
+                    <CardText>Total: ${order?.total + 750}</CardText>
                     <Button
                         color="dark"
                         onClick={() => {
@@ -45,6 +66,17 @@ export default function OrderDetails() {
                     >
                         Add More Records
                     </Button>
+                    <Button
+                        color="dark"
+                        style={{ marginLeft: "8px" }}
+                        onClick={() => {
+                            if (userProfileId) { // Ensure userProfileId is available
+                                navigate(`/orders/${id}/${userProfileId}/confirmation`);
+                            }
+                        }}
+                    >
+                        Submit Order
+                    </Button>
 
                 </CardBody>
 
@@ -52,8 +84,9 @@ export default function OrderDetails() {
             <h4>Records</h4>
             {order?.records?.map((records, index) => (
                 <Card
-                    outline
-                    color="success"
+
+                    // outline="true"
+                    color="light"
                     key={index}
                     style={{ marginBottom: "4px" }}
                 >
@@ -67,7 +100,7 @@ export default function OrderDetails() {
                             </div>
                         ))}</CardText>
                         <CardText>Quantity: {records?.quantity}</CardText>
-                        <CardText>Total: ${order?.total}</CardText>
+
                         <Button
                             color="dark"
                             onClick={() => {
@@ -76,9 +109,17 @@ export default function OrderDetails() {
                         >
                             Update This Record
                         </Button>
+                        <Button
+                            onClick={() => deleteRecord(records.id)}
+                            color="danger"
+                            style={{ marginLeft: "8px" }} // Add left margin for spacing
+                        >
+                            Delete
+                        </Button>
                     </CardBody>
                 </Card>
             ))}
         </>
     );
-}
+
+};

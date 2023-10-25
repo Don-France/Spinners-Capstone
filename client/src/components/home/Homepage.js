@@ -4,19 +4,30 @@ import { Container, Row, Col } from "reactstrap";
 import { getColors } from '../../managers/colormanager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 
-export default function HomePage() {
+export default function HomePage({ loggedInUser }) {
     const [colors, setColors] = useState([]);
 
     useEffect(() => {
         getColors().then(setColors);
 
 
+
     }, []);
+
+    const isNewOrderButton = loggedInUser
+        ? "New Order"
+        : "Login or Register to place an Order";
+
     return (
         <Container className="mt-5">
             <Row>
                 <Col>
-                    <h1>Welcome to Your Homepage</h1>
+                    <h1>Welcome to Spinners Discount Record Pressing</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2>A little bit about us</h2>
                 </Col>
             </Row>
             <Row className="mt-3">
@@ -30,7 +41,7 @@ export default function HomePage() {
                 <Col>
 
                     <Link to="/neworder">
-                        <button className="btn btn-primary">New Order</button>
+                        <button className="btn btn-primary">{isNewOrderButton}</button>
                     </Link>
 
                 </Col>

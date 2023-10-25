@@ -302,12 +302,12 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "4bb1038e-131f-4b0a-b0ed-d52593ca2644", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "96dc7c9d-3782-4d53-8636-0a533fbb21c0", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "ae70b9e1-a670-445f-85ab-86e34957d932", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEGQrh1t8gJ/kAYe57qlne4kNOhxQhfgZQCTzL2nFE3Gw6+ASnKKokPhv3DTg8C2MQQ==", null, false, "374eac0b-808e-4c62-8cf1-2cbf6fd1f356", false, "Administrator" });
+                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "f100a958-d1b1-4de7-b78d-ca3bdfcfc206", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEBygUopE6Mvpz+JdCg/uikyg1LuwA2e9fM+rjS2+q6fhigDNNfoWU+bAL9Nez/jh7w==", null, false, "928335e1-7c85-446e-a11d-5f31dbb7bbc6", false, "Administrator" });
 
             migrationBuilder.InsertData(
                 table: "Colors",
@@ -356,7 +356,7 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "OrderDate", "UserProfileId" },
-                values: new object[] { 1, new DateTime(2023, 10, 19, 13, 48, 37, 811, DateTimeKind.Local).AddTicks(5490), 1 });
+                values: new object[] { 1, new DateTime(2023, 10, 24, 13, 11, 55, 358, DateTimeKind.Local).AddTicks(482), 1 });
 
             migrationBuilder.InsertData(
                 table: "Records",

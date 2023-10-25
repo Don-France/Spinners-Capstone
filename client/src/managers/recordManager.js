@@ -89,3 +89,9 @@ export const updateRecord = (id, record) => {
             throw error;
         });
 }
+
+export const deleteARecord = (id) => {
+    return fetch(`${_apiUrl}/${id}/delete`, {
+        method: "Delete",
+    });
+};

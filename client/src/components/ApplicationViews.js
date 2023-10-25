@@ -9,6 +9,7 @@ import HomePage from "./home/Homepage.js";
 import AddARecordToAnOrder from "./orders/AddARecordToAnOrder.js";
 import EditRecordInOrder from "./orders/EditRecordInOrder.js";
 import AdminDeleteAColor from "./admin/AdminDeleteAColor.js";
+import OrderConfirmation from "./orders/OrderConfirmation.js";
 
 
 // import UserProfileList from "./userprofiles/UserProfileList.js";
@@ -21,7 +22,7 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           index
           element={
             // <AuthorizedRoute loggedInUser={loggedInUser}>
-            <HomePage />
+            <HomePage loggedInUser={loggedInUser} />
             // </AuthorizedRoute>
           }
         />
@@ -60,6 +61,14 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           element={
             <AuthorizedRoute loggedInUser={loggedInUser} >
               <EditRecordInOrder />
+            </AuthorizedRoute>
+          }
+        />
+        <Route
+          path="orders/:id/:userProfileId/confirmation"
+          element={
+            <AuthorizedRoute loggedInUser={loggedInUser}>
+              <OrderConfirmation />
             </AuthorizedRoute>
           }
         />
