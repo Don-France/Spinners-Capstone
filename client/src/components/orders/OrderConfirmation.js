@@ -36,9 +36,9 @@ export default function OrderConfirmation() {
     return (
         <>
             <h2>Thank you for your order!</h2>
-            <Card color="info" inverse>
+            <Card color="secondary" inverse>
                 <CardBody>
-                    <CardTitle tag="h4">Order Number: {order.id + 19000}</CardTitle>
+                    <CardTitle tag="h4">Confirmation Number: {order.id + 1912345000}</CardTitle>
                     <CardText>
                         Order Date: {new Date(order.orderDate).toLocaleDateString()}
                     </CardText>

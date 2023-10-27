@@ -5,6 +5,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { getUserProfileById } from "../../managers/userProfileManager.js";
 import { deleteARecord } from "../../managers/recordManager.js";
 
+
 export default function OrderDetails() {
     const [order, setOrder] = useState({});
     const { id } = useParams();
@@ -70,7 +71,7 @@ export default function OrderDetails() {
                         color="dark"
                         style={{ marginLeft: "8px" }}
                         onClick={() => {
-                            if (userProfileId) { // Ensure userProfileId is available
+                            if (userProfileId) {
                                 navigate(`/orders/${id}/${userProfileId}/confirmation`);
                             }
                         }}

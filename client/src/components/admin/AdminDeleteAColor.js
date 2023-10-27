@@ -39,7 +39,7 @@ export default function AdminDeleteAColor({ loggedInUser }) {
             </Row>
             <Row className="mt-3">
                 {colors.map((color) => (
-                    <Col key={color.Id} md={4}>
+                    <Col key={color.Id} sm={6} md={4} lg={3}>
                         <ColorForRecordsImageCard color={color} />
                         <Button
                             color="danger"
@@ -49,18 +49,13 @@ export default function AdminDeleteAColor({ loggedInUser }) {
                         >
                             Delete
                         </Button>
+
                     </Col>
                 ))}
 
             </Row>
 
-            {/* <Row className="mt-3">
-                <Col>
-                    <Link to="/colors">
-                        <button className="btn btn-primary">New Order</button>
-                    </Link>
-                </Col>
-            </Row> */}
+
         </Container>
     );
 };

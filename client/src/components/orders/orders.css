@@ -1,0 +1,13 @@
+.recordImageCard {
+    width: 250px;
+    height: 250px;
+    /* margin-bottom: 5px; */
+}
+/* Add this to your CSS file (orders.css) or a custom CSS file */
+.recordImageCard img {
+    background: transparent;
+}
+
+.create-order {
+    background-color: rgb(116, 199, 171);
+}
