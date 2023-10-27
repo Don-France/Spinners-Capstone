@@ -36,3 +36,5 @@ C:\Users\donro\workspace\csharp\Spinners-Capstone\obj\Debug\net6.0\Spinners-Caps
 C:\Users\donro\workspace\csharp\Spinners-Capstone\obj\Debug\net6.0\ref\Spinners-Capstone.dll
 C:\Users\donro\workspace\csharp\Spinners-Capstone\obj\Debug\net6.0\Spinners-Capstone.pdb
 C:\Users\donro\workspace\csharp\Spinners-Capstone\obj\Debug\net6.0\Spinners-Capstone.genruntimeconfig.cache
+C:\Users\donro\workspace\csharp\Spinners-Capstone\bin\Debug\net6.0\package-lock.json
+C:\Users\donro\workspace\csharp\Spinners-Capstone\bin\Debug\net6.0\package.json

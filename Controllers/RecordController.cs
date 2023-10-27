@@ -40,7 +40,7 @@ public class RecordController : ControllerBase
     }
 
     [HttpPost("create")]
-    [Authorize]
+    // [Authorize]
     public IActionResult CreateARecordOrder([FromBody] Record record)
     {
 

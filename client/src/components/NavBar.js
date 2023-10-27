@@ -11,6 +11,7 @@ import {
   NavbarToggler,
 } from "reactstrap";
 import { logout } from "../managers/authManager";
+import logo from "./asset/recordLogo.png";
 
 export default function NavBar({ loggedInUser, setLoggedInUser }) {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
     <div>
       <Navbar color="light" light fixed="true" expand="lg">
         <NavbarBrand className="mr-auto" tag={RRNavLink} to="/">
-          🧹🧼Spinners Discount Record Pressing
+          <img src={logo} alt="Logo" height="40" />Spinners Discount Record Pressing
         </NavbarBrand>
         {loggedInUser ? (
           <>
