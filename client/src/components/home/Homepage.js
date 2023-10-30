@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import { getColors } from '../../managers/colormanager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 import { getSpecialEffects } from '../../managers/specialEffectmanager.js';
@@ -28,7 +28,7 @@ export default function HomePage({ loggedInUser }) {
         <div>
             <Container className="mt-5">
                 <Row>
-                    <Col>
+                    <Col >
                         <h1>Welcome to Spinners Discount Record Pressing</h1>
                         <div className='video'>
                             <YoutubeEmbed embedId="_Yr__8JiQk4" />
@@ -67,9 +67,9 @@ export default function HomePage({ loggedInUser }) {
             </Container>
             <Container className="bg-secondary border"
                 fluid="sm">
-                <Row className="m-4 mb-4 justify-content-center"  >
+                <Row className="mt-4 mb-4 justify-content-space-between"  >
                     {colors.map((color) => (
-                        <Col key={color.Id} sm={6} md={4} lg={3} style={{ padding: "10px" }}  >
+                        <Col key={color.Id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}  >
                             <div className="color-card-section">
                                 <ColorForRecordsImageCard color={color} className="record-image" />
                             </div>
@@ -85,9 +85,9 @@ export default function HomePage({ loggedInUser }) {
                 </Row>
             </Container>
             <Container>
-                <Row className="mt-1">
+                <Row className="mt-1 bg-secondary border" >
                     {specialEffects.map((se) => (
-                        <Col key={se.Id} sm={6} md={4} lg={3}>
+                        <Col key={se.Id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
                             <div className="special-effect-card-section">
                                 <SpecialEffectCard specialEffect={se} />
                             </div>
@@ -97,10 +97,10 @@ export default function HomePage({ loggedInUser }) {
             </Container>
             <Container>
                 <Row className="mt-0">
-                    <Col>
+                    <Col className="d-flex justify-content-center">
 
                         <Link to="/neworder">
-                            <button className="btn btn-success">{isNewOrderButton}</button>
+                            <Button color="info">{isNewOrderButton}</Button>
                         </Link>
 
                     </Col>

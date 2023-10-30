@@ -9,7 +9,7 @@ import {
     Input,
     FormGroup,
     Form,
-    Select,
+    Container, Row, Col
 } from 'reactstrap';
 
 
@@ -97,26 +97,28 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
     };
 
     return (
-        <div>
-            <h2>Create an Order</h2>
-            <Form>
+        <Container>
+            <h2>Add Records to Order</h2>
+            <Form className='create-order'>
                 <FormGroup>
-                    <Label>Select Colors:</Label>
-                    <div>
+                    <Label for="color">Select Color:</Label>
+                    <Row>
                         {colors.map((colorOption) => (
-                            <Label key={colorOption.id} check>
-                                <FormGroup check>
-                                    <Input
-                                        type="checkbox"
-                                        id={`color-${colorOption.id}`}
-                                        value={colorOption.id}
-                                        onChange={handleColorChange}
-                                    />
-                                    <ColorForRecordsImageCard color={colorOption} />
+                            <Col key={colorOption.id}  >
+                                <ColorForRecordsImageCard color={colorOption} />
+                                <FormGroup check >
+                                    <Label check>
+                                        <Input
+                                            type="checkbox"
+                                            id={`color-${colorOption.id}`}
+                                            value={colorOption.id}
+                                            onChange={handleColorChange}
+                                        />
+                                    </Label>
                                 </FormGroup>
-                            </Label>
+                            </Col>
                         ))}
-                    </div>
+                    </Row>
                 </FormGroup>
                 <FormGroup>
                     <Label for="weight">Select Weight:</Label>
@@ -125,7 +127,7 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                         name="select"
                         id="weight"
                         onChange={handleRecordWeightChange}
-                    >
+                    >   <option value="0">Please select a weight</option>
                         <option value="1">130 grams</option>
                         <option value="2">180 grams</option>
                     </Input>
@@ -146,16 +148,22 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                         name="select"
                         id="specialEffect"
                         onChange={handleRecordSpecialEffectChange}
-                    >
+                    >   <option value="0">None</option>
                         <option value="1">BiColor</option>
                         <option value="2">Splatter</option>
                         <option value="3">Swirl</option>
                     </Input>
                 </FormGroup>
-                <Button color="primary" onClick={handleOrderSubmit}>
-                    Submit an order
-                </Button>
             </Form>
-        </div>
+            <Container>
+                <Row className="mt-0">
+                    <Col className="d-flex justify-content-center">
+                        <Button color="primary" onClick={handleOrderSubmit}>
+                            View Your Order Details
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 }
