@@ -3,6 +3,16 @@ import { getColors } from '../../managers/colormanager.js';
 import { updateRecord, getRecordById } from '../../managers/recordManager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
 import { useNavigate, useParams } from 'react-router-dom';
+import {
+    Label,
+    Input,
+    FormGroup,
+    Form,
+    Container,
+    Row,
+    Col,
+    Button
+} from 'reactstrap';
 
 
 
@@ -64,61 +74,57 @@ export default function EditRecordInOrder({ loggedInUser }) {
     };
 
     return (
-        <div>
-            <h2>Edit Record in Order</h2>
-            <div>
-                <label>Select Color:</label>
-                <div>
-                    {colors.map((colorOption) => (
-                        <label key={colorOption.id}>
-                            <ColorForRecordsImageCard color={colorOption} />
-                            <input
-                                type="checkbox"
-                                id={`color-${colorOption.id}`}
-                                value={colorOption.id}
-                                checked={record.recordColors.some(
-                                    (color) => color.colorId === colorOption.id
-                                )}
-                                onChange={handleColorChange}
-                            />
-                        </label>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <label htmlFor="weight">Select Weight:</label>
-                <select
-                    id="weight"
-                    value={record.recordWeightId}
-                    onChange={handleRecordWeightChange}
-                >
-                    <option value="1">130 grams</option>
-                    <option value="2">180 grams</option>
-                </select>
-            </div>
-            <div>
-                <label htmlFor="quantity">Quantity:</label>
-                <input
-                    type="number"
-                    id="quantity"
-                    min="50"
-                    value={record.quantity}
-                    onChange={handleQuantityChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="specialEffect">Select Special Effect:</label>
-                <select
-                    id="specialEffect"
-                    value={record.specialEffectId}
-                    onChange={handleRecordSpecialEffectChange}
-                >
-                    <option value="1">BiColor</option>
-                    <option value="2">Splatter</option>
-                    <option value="3">Swirl</option>
-                </select>
-            </div>
-            <button onClick={handleRecordUpdate}>Update Record</button>
-        </div>
+        <Container>
+            <h2>Edit Record  Order</h2>
+            <Form className='create-order'>
+                <FormGroup>
+                    <Label for="color">Select Color:</Label>
+                    <Row>
+                        {colors.map((colorOption) => (
+                            <Col key={colorOption.id}>
+                                <ColorForRecordsImageCard color={colorOption} />
+                                <FormGroup check>
+                                    <Label check>
+                                        <Input
+                                            type="checkbox"
+                                            id={`color-${colorOption.id}`}
+                                            value={colorOption.id}
+                                            checked={record.recordColors.some(color => color.colorId === colorOption.id)}
+                                            onChange={handleColorChange}
+                                        />
+                                    </Label>
+                                </FormGroup>
+                            </Col>
+                        ))}
+                    </Row>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="weight">Select Weight:</Label>
+                    <Input type="select" id="weight" value={record.recordWeightId} onChange={handleRecordWeightChange}>
+                        <option value="1">130 grams</option>
+                        <option value="2">180 grams</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="quantity">Quantity:</Label>
+                    <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="specialEffect">Select Special Effect:</Label>
+                    <Input type="select" id="specialEffect" value={record.specialEffectId} onChange={handleRecordSpecialEffectChange}>
+                        <option value="1">BiColor</option>
+                        <option value="2">Splatter</option>
+                        <option value="3">Swirl</option>
+                    </Input>
+                </FormGroup>
+            </Form>
+            <Container>
+                <Row className="mt-0">
+                    <Col className="d-flex justify-content-center">
+                        <Button color="primary" onClick={handleRecordUpdate}>Update Record</Button>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 }

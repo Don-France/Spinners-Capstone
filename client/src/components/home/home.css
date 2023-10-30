@@ -1,9 +1,13 @@
-.mt-5 {
-    background-color: rgb(208, 214, 219);
+/* * {
+    border: 1px dotted red;
+} */
+
+/* .mt-5 { */
+    /* background-color: rgb(208, 214, 219); */
     /* display: flex; */
     
    
-}
+/* } */
 
 /* .mt-3 {
     width: 300px;
@@ -13,11 +17,12 @@
 /* .recordImageCard img {
    mix-blend-mode: multiply;
 } */
-.color-card-section {
+/* .color-card-section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 .record-image {
     mix-blend-mode: multiply; 
-}
+   text-align: center;
+} */

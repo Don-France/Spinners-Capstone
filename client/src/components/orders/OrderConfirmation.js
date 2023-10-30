@@ -54,16 +54,9 @@ export default function OrderConfirmation() {
                     <CardText>
                         Email: {userProfile?.email}
                     </CardText>
-                    <CardText>Total: ${order?.total + 750}</CardText>
+                    <CardText>Order Total: ${order?.total + 750}</CardText>
 
-                    {/* <Button
-                        color="dark"
-                        onClick={() => {
-                            navigate("/");
-                        }}
-                    >
-                        Submit Order
-                    </Button> */}
+
 
                 </CardBody>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from "reactstrap";
 import { adminDeleteAColor, getColorById, getColors } from '../../managers/colormanager.js';
 import ColorForRecordsImageCard from '../colors/ColorForRecordsImageCard.js';
-
+import '../orders/orders.css';
 export default function AdminDeleteAColor({ loggedInUser }) {
     const [colors, setColors] = useState([]);
 
@@ -31,22 +31,24 @@ export default function AdminDeleteAColor({ loggedInUser }) {
             });
     };
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 ">
             <Row>
                 <Col>
                     <h1>Current Color Choices</h1>
                 </Col>
             </Row>
-            <Row className="mt-3">
+            <Row className="mt-3 ">
                 {colors.map((color) => (
-                    <Col key={color.Id} sm={6} md={4} lg={3}>
+                    <Col key={color.Id} sm={6} md={4} lg={3} >
                         <ColorForRecordsImageCard color={color} />
+
+
                         <Button
                             color="danger"
                             onClick={() => {
-                                adminDelete(color.id)
+                                adminDelete(color.id);
                             }}
-                        >
+                            style={{ textAlign: 'center', marginTop: '45px' }} >
                             Delete
                         </Button>
 

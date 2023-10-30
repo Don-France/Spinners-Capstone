@@ -9,8 +9,8 @@ import {
 
 export default function SpecialEffectCard({ specialEffect }) {
     return (
-        <Card className="mb-3">
-            <CardImg top width="33%" src={specialEffect.imageUrl} alt={specialEffect.name} />
+        <Card className="mb-3 mt-3 text-center" style={{ margin: 'auto' }}>
+            <CardImg top width="100%" src={specialEffect.imageUrl} alt={specialEffect.name} />
             <CardBody>
                 <CardTitle>{specialEffect.name}</CardTitle>
                 <CardText>${specialEffect.price}/50 Records</CardText>
