@@ -52,15 +52,15 @@ export default function OrderDetails() {
     return (
         <>
             <h2>Order Details</h2>
-            <Card color="info" inverse>
+            <Card color="secondary" inverse>
                 <CardBody>
-                    <CardTitle tag="h4">Order Number: {order.id + 19000}</CardTitle>
+                    <CardTitle tag="h4">Order Number: {order.id + 1912345000}</CardTitle>
                     <CardText>
                         Order Date: {new Date(order.orderDate).toLocaleDateString()}
                     </CardText>
                     <CardText>Total: ${order?.total + 750}</CardText>
                     <Button
-                        color="dark"
+                        color="info"
                         onClick={() => {
                             navigate(`/addtoorder/${id}`);
                         }}
@@ -68,7 +68,7 @@ export default function OrderDetails() {
                         Add More Records
                     </Button>
                     <Button
-                        color="dark"
+                        color="success"
                         style={{ marginLeft: "8px" }}
                         onClick={() => {
                             if (userProfileId) {
@@ -76,7 +76,7 @@ export default function OrderDetails() {
                             }
                         }}
                     >
-                        Submit Order
+                        Submit Your Order
                     </Button>
 
                 </CardBody>
@@ -87,7 +87,7 @@ export default function OrderDetails() {
                 <Card
 
                     // outline="true"
-                    color="light"
+                    color="secondary"
                     key={index}
                     style={{ marginBottom: "4px" }}
                 >
@@ -103,7 +103,7 @@ export default function OrderDetails() {
                         <CardText>Quantity: {records?.quantity}</CardText>
 
                         <Button
-                            color="dark"
+                            color="warning"
                             onClick={() => {
                                 navigate(`/updateorder/${order.id}/${records.id}`);
                             }}

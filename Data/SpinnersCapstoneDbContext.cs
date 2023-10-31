@@ -74,19 +74,21 @@ public class SpinnersCapstoneDbContext : IdentityDbContext<IdentityUser>
         modelBuilder.Entity<RecordWeight>().HasData(new RecordWeight[]
         {
             new RecordWeight
-            {Id = 1, Weight = 130, Price = 50},
+            {Id = 1, Weight = 130, Price = 50M},
             new RecordWeight
-            {Id = 2, Weight = 180, Price = 75}
+            {Id = 2, Weight = 180, Price = 75M}
         });
 
         modelBuilder.Entity<SpecialEffect>().HasData(new SpecialEffect[]
         {
             new SpecialEffect
-            {Id = 1, Name = "BiColor", Price = 50, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_halfNhalfSPLATTER-scaled.jpg"},
+            {Id = 1, Name = "BiColor", Price = 50M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_halfNhalfSPLATTER-scaled.jpg"},
             new SpecialEffect
-            {Id = 2, Name = "Splatter", Price = 100, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_3colorSPLATTER-scaled.jpg"},
+            {Id = 2, Name = "Splatter", Price = 100M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_3colorSPLATTER-scaled.jpg"},
             new SpecialEffect
-            {Id = 3, Name = "Swirl", Price = 75, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg"},
+            {Id = 3, Name = "Swirl", Price = 75M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg"},
+             new SpecialEffect
+            {Id = 4, Name = "None", Price = 0M },
 
         });
         modelBuilder.Entity<RecordColor>().HasData(new RecordColor[]

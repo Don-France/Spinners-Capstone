@@ -66,6 +66,11 @@ export default function EditRecordInOrder({ loggedInUser }) {
 
     const handleRecordUpdate = (event) => {
         event.preventDefault();
+        if (record.quantity < 50) {
+            alert('Minimum quantity should be 50');
+            return; // Prevent further action due to invalid quantity
+        }
+
 
         // Update the record with the new data
         updateRecord(recordId, record).then(() => {
@@ -74,57 +79,76 @@ export default function EditRecordInOrder({ loggedInUser }) {
     };
 
     return (
-        <Container>
-            <h2>Edit Record  Order</h2>
-            <Form className='create-order'>
-                <FormGroup>
-                    <Label for="color">Select Color:</Label>
-                    <Row>
-                        {colors.map((colorOption) => (
-                            <Col key={colorOption.id}>
-                                <ColorForRecordsImageCard color={colorOption} />
-                                <FormGroup check>
-                                    <Label check>
-                                        <Input
-                                            type="checkbox"
-                                            id={`color-${colorOption.id}`}
-                                            value={colorOption.id}
-                                            checked={record.recordColors.some(color => color.colorId === colorOption.id)}
-                                            onChange={handleColorChange}
-                                        />
-                                    </Label>
-                                </FormGroup>
-                            </Col>
-                        ))}
-                    </Row>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="weight">Select Weight:</Label>
-                    <Input type="select" id="weight" value={record.recordWeightId} onChange={handleRecordWeightChange}>
-                        <option value="1">130 grams</option>
-                        <option value="2">180 grams</option>
-                    </Input>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="quantity">Quantity:</Label>
-                    <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="specialEffect">Select Special Effect:</Label>
-                    <Input type="select" id="specialEffect" value={record.specialEffectId} onChange={handleRecordSpecialEffectChange}>
-                        <option value="1">BiColor</option>
-                        <option value="2">Splatter</option>
-                        <option value="3">Swirl</option>
-                    </Input>
-                </FormGroup>
-            </Form>
+        <div>
             <Container>
-                <Row className="mt-0">
-                    <Col className="d-flex justify-content-center">
-                        <Button color="primary" onClick={handleRecordUpdate}>Update Record</Button>
-                    </Col>
-                </Row>
+                <h2>Edit Record Order</h2>
             </Container>
-        </Container>
+
+            <Container>
+                <Form className='create-order'>
+                    <Container>
+                        <h3>Selected Colors:</h3>
+                        <Row className="bg-secondary border"
+                            fluid="sm">
+                            {colors.map((colorOption) => (
+                                <Col key={colorOption.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
+                                    <div className="color-card-section">
+                                        <ColorForRecordsImageCard color={colorOption} className="record-image" />
+                                    </div>
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input
+                                                type="checkbox"
+                                                id={`color-${colorOption.id}`}
+                                                value={colorOption.id}
+                                                checked={record.recordColors.some(color => color.colorId === colorOption.id)}
+                                                onChange={handleColorChange}
+                                            />
+                                        </Label>
+                                    </FormGroup>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Container>
+
+                    <Container>
+
+                        <h3>Selected Weight:</h3>
+                        <Input type="select" id="weight" value={record.recordWeightId} onChange={handleRecordWeightChange}>
+                            <option value="1">130 grams</option>
+                            <option value="2">180 grams</option>
+                        </Input>
+
+                    </Container>
+
+                    <Container>
+
+                        <h3>Quantity:</h3>
+                        <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} />
+
+                    </Container>
+
+                    <Container>
+
+                        <h3>Selected Special Effect:</h3>
+                        <Input type="select" id="specialEffect" value={record.specialEffectId} onChange={handleRecordSpecialEffectChange}>
+                            <option value="1">BiColor</option>
+                            <option value="2">Splatter</option>
+                            <option value="3">Swirl</option>
+                            <option value="4">None</option>
+                        </Input>
+
+                    </Container>
+
+                    <Container>
+                        <Row className="mt-0">
+                            <Col className="d-flex justify-content-center">
+                                <Button color="primary" onClick={handleRecordUpdate}>Update Record</Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Form>
+            </Container>
+        </div>
     );
 }

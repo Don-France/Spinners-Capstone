@@ -37,9 +37,9 @@ export default function HomePage({ loggedInUser }) {
                 </Row>
             </Container>
             <Container>
-                <Row>
+                <Row className="bg-secondary border">
                     <Col>
-                        <h2>About Vinyl Record Pressing</h2>
+                        <h2>About Our Vinyl Record Pressing</h2>
                         <p>
                             At Spinners Discount Record Pressing, we are passionate about preserving the art of vinyl records and specialize in catering to up and coming artists.
                             Vinyl records have a timeless charm that has been captivating music enthusiasts for decades. We specialize in creating high-quality vinyl records that
@@ -65,11 +65,10 @@ export default function HomePage({ loggedInUser }) {
                     </Col>
                 </Row>
             </Container>
-            <Container className="bg-secondary border"
-                fluid="sm">
+            <Container >
                 <Row className="mt-4 mb-4 justify-content-space-between"  >
                     {colors.map((color) => (
-                        <Col key={color.Id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}  >
+                        <Col key={color.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}  >
                             <div className="color-card-section">
                                 <ColorForRecordsImageCard color={color} className="record-image" />
                             </div>
@@ -85,14 +84,19 @@ export default function HomePage({ loggedInUser }) {
                 </Row>
             </Container>
             <Container>
-                <Row className="mt-1 bg-secondary border" >
-                    {specialEffects.map((se) => (
-                        <Col key={se.Id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
-                            <div className="special-effect-card-section">
-                                <SpecialEffectCard specialEffect={se} />
-                            </div>
-                        </Col>
-                    ))}
+                <Row>
+                    {specialEffects.map((se) => {
+                        if (se.imageUrl) {
+                            return (
+                                <Col key={se.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
+                                    <div className="special-effect-card-section">
+                                        <SpecialEffectCard specialEffect={se} />
+                                    </div>
+                                </Col>
+                            );
+                        }
+                        return null; // Do not render if there's no image URL
+                    })}
                 </Row>
             </Container>
             <Container>
