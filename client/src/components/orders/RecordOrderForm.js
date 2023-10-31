@@ -60,7 +60,8 @@ export default function RecordOrderForm({ loggedInUser }) {
     };
 
     const handleQuantityChange = (event) => {
-        const quantityInput = parseInt(event.target.value);
+        let quantityInput = parseInt(event.target.value);
+
         setRecord({ ...record, quantity: quantityInput })
     };
     const handleRecordSpecialEffectChange = (event) => {
@@ -70,13 +71,10 @@ export default function RecordOrderForm({ loggedInUser }) {
 
     const handleOrderSubmit = (event) => {
         event.preventDefault();
-        // console.log("Submit button clicked");
-
-        // console.log("Special Effect:", record.specialEffectId);
-        // console.log("RecordColor:", record.recordColors);
-
-
-
+        if (record.quantity < 50) {
+            alert('Minimum quantity should be 50');
+            return; // Prevent further action due to invalid quantity
+        }
 
         // Create an object to represent the order with selected choices
         const newRecord = {
@@ -98,77 +96,93 @@ export default function RecordOrderForm({ loggedInUser }) {
     };
 
     return (
-        <Container>
-            <h2>Create an Order</h2>
-            <Form className='create-order'>
-                <FormGroup>
-                    <Label for="color">Select Color:</Label>
-                    <Row>
-                        {colors.map((colorOption) => (
-                            <Col key={colorOption.id}  >
-                                <ColorForRecordsImageCard color={colorOption} />
-                                <FormGroup check >
-                                    <Label check>
-                                        <Input
-                                            type="checkbox"
-                                            id={`color-${colorOption.id}`}
-                                            value={colorOption.id}
-                                            onChange={handleColorChange}
-                                        />
-                                    </Label>
-                                </FormGroup>
-                            </Col>
-                        ))}
-                    </Row>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="weight">Select Weight:</Label>
-                    <Input
-                        type="select"
-                        name="select"
-                        id="weight"
-                        onChange={handleRecordWeightChange}
-                    >   <option value="0">Please select a weight</option>
-                        <option value="1">130 grams</option>
-                        <option value="2">180 grams</option>
-                    </Input>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="quantity">Quantity:</Label>
-                    <Input
-                        type="number"
-                        id="quantity"
-                        min="50"
-                        onChange={handleQuantityChange}
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="specialEffect">Select Special Effect:</Label>
-                    <Input
-                        type="select"
-                        name="select"
-                        id="specialEffect"
-                        onChange={handleRecordSpecialEffectChange}
-                    >   <option value="0">None</option>
-                        <option value="1">130 grams</option>
-                        <option value="2">Splatter</option>
-                        <option value="3">Swirl</option>
-                    </Input>
-                </FormGroup>
-            </Form>
+        <div>
             <Container>
-                <Row className="mt-0">
-                    <Col className="d-flex justify-content-center">
-                        <Button color="primary" onClick={handleOrderSubmit}>
-                            View Your Order Details
-                        </Button>
-                    </Col>
-                </Row>
+                <h2>Start Your Order</h2>
             </Container>
-        </Container>
+
+            <Container>
+                <Form className='create-order'>
+                    <Container>
+                        <h3>Select Color/s:</h3>
+                        <Row className="bg-secondary border"
+                            fluid="sm">
+                            {colors.map((colorOption) => (
+                                <Col key={colorOption.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
+                                    <div className="color-card-section">
+                                        <ColorForRecordsImageCard color={colorOption} className="record-image" />
+                                    </div>
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input
+                                                type="checkbox"
+                                                id={`color-${colorOption.id}`}
+                                                value={colorOption.id}
+                                                onChange={handleColorChange}
+                                            />
+                                            {colorOption.name}
+                                        </Label>
+                                    </FormGroup>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Container>
+
+                    <Container>
+                        <h3>Select Weight:</h3>
+                        <h5>130 gram is standard and 180 gram is premium</h5>
+                        <Input
+                            type="select"
+                            name="select"
+                            id="weight"
+                            onChange={handleRecordWeightChange}
+                        >
+                            <option value="0">Please select a weight</option>
+                            <option value="1">130 grams</option>
+                            <option value="2">180 grams</option>
+                        </Input>
+                    </Container>
+
+                    <Container>
+                        <h3>Quantity:</h3>
+                        <Input
+                            type="number"
+                            id="quantity"
+                            min="50"
+                            onChange={handleQuantityChange}
+                        />
+                    </Container>
+
+                    <Container>
+                        <h3>Select Special Effect:</h3>
+                        <Input
+                            type="select"
+                            name="select"
+                            id="specialEffect"
+                            onChange={handleRecordSpecialEffectChange}
+                        >
+                            <option value="0">Special Effects</option>
+                            <option value="1">BiColor</option>
+                            <option value="2">Splatter</option>
+                            <option value="3">Swirl</option>
+                            <option value="4">None</option>
+                        </Input>
+                    </Container>
+
+                    <Container>
+                        <Row className="mt-0">
+                            <Col className="d-flex justify-content-center">
+                                <Button color="primary" onClick={handleOrderSubmit}>
+                                    View Your Order Details
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Form>
+            </Container>
+        </div>
     );
 }
-
 
 
 

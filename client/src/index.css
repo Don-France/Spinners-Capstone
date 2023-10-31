@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://cdn.pixabay.com/photo/2018/03/03/12/34/record-3195585_1280.jpg') !important;
 }
 
 code {

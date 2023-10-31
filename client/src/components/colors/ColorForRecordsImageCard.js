@@ -5,7 +5,7 @@ import {
     CardBody,
     CardTitle,
 } from 'reactstrap';
-// import '../orders/orders.css';
+import '../orders/orders.css';
 
 export default function ColorForRecordsImageCard({ color }) {
     return (

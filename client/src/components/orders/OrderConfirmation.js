@@ -54,7 +54,7 @@ export default function OrderConfirmation() {
                     <CardText>
                         Email: {userProfile?.email}
                     </CardText>
-                    <CardText>Order Total: ${order?.total + 750}</CardText>
+                    <CardText>Order Total: ${(order?.total + 750 * 1.0925).toFixed(2)}</CardText>
 
 
 

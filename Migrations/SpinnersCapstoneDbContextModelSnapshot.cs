@@ -51,7 +51,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "0810a36e-ab32-4ba6-86f0-34090f2b48f4",
+                            ConcurrencyStamp = "16315dde-c9c8-43a5-9cde-e2b8b6e537b4",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -150,13 +150,13 @@ namespace Spinners_Capstone.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "03a7d6d0-ef57-4d8c-98bc-26e53dd48f14",
+                            ConcurrencyStamp = "3fcecba1-c632-41c4-8860-239001ffa25f",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAENXu/DOsjivz0WOR/PC77DmFczuWAcfJXmNZqC/RG+hpYSTGgrMC4TwlQBU9y4k9VA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP4YdpLkWhI9lQfnfuipnd8+/6QjYOxinMIgbX3eUJhBoFkwEqGAffLNo351+TQBvA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aa688f8e-f514-45d2-9a3a-8e197db969d2",
+                            SecurityStamp = "6cfe213b-45fd-4799-829d-30404fc6dda7",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         });
@@ -349,7 +349,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            OrderDate = new DateTime(2023, 10, 26, 11, 59, 45, 324, DateTimeKind.Local).AddTicks(4269),
+                            OrderDate = new DateTime(2023, 10, 31, 11, 23, 45, 794, DateTimeKind.Local).AddTicks(2167),
                             UserProfileId = 1
                         });
                 });
@@ -521,6 +521,12 @@ namespace Spinners_Capstone.Migrations
                             ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg",
                             Name = "Swirl",
                             Price = 75m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "None",
+                            Price = 0m
                         });
                 });
 

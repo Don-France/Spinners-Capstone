@@ -8,6 +8,10 @@ import {
 } from 'reactstrap';
 
 export default function SpecialEffectCard({ specialEffect }) {
+    if (!specialEffect.imageUrl) {
+        // Return null if there's no image URL
+        return null;
+    }
     return (
         <Card className="mb-3 mt-3 text-center" style={{ margin: 'auto' }}>
             <CardImg top width="100%" src={specialEffect.imageUrl} alt={specialEffect.name} />
