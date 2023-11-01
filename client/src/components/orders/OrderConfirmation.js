@@ -61,7 +61,7 @@ export default function OrderConfirmation() {
                 </CardBody>
 
             </Card>
-
+            <h2>Please print this page for your records!</h2>
         </>
     );
 };

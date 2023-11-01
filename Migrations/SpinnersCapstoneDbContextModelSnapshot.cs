@@ -51,7 +51,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "16315dde-c9c8-43a5-9cde-e2b8b6e537b4",
+                            ConcurrencyStamp = "513328e4-6e6a-48ae-aefe-013ec67ac329",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -150,13 +150,13 @@ namespace Spinners_Capstone.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3fcecba1-c632-41c4-8860-239001ffa25f",
+                            ConcurrencyStamp = "c673cfc0-ce42-475f-ae81-92d424aa132b",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEP4YdpLkWhI9lQfnfuipnd8+/6QjYOxinMIgbX3eUJhBoFkwEqGAffLNo351+TQBvA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOCxM3zj2VxyEFZlaSVfcxGbZ1aFVCBVjq+fvo1LPPN8HTmv+fvy/ceQQR8Aa0YcOw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6cfe213b-45fd-4799-829d-30404fc6dda7",
+                            SecurityStamp = "0145653c-9fbe-4b81-8e13-b8806e197342",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         });
@@ -272,55 +272,55 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_redOPAQUE-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/zvkfbtXp/stand-COLORS-red-OPAQUE-scaled-removebg-preview.png",
                             Name = "Red"
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_leafGREENopaque-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/y8QrCtZK/stand-COLORS-leaf-GREENopaque-scaled-removebg-preview.png",
                             Name = "Leaf Green"
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_blueOPAQUE-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/02rwH4PD/stand-COLORS-blue-OPAQUE-scaled-removebg-preview.png",
                             Name = "Blue"
                         },
                         new
                         {
                             Id = 4,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_orangeTRANSPARENT-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/7bvw9bqB/stand-COLORS-orange-OPAQUE-scaled-removebg-preview.png",
                             Name = "Orange"
                         },
                         new
                         {
                             Id = 5,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_purpleOPAQUE-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/xd7f86WD/stand-COLORS-purple-OPAQUE-scaled-removebg-preview.png",
                             Name = "Purple"
                         },
                         new
                         {
                             Id = 6,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_glassCLEAR-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/W3n5Syjx/stand-COLORS-glass-CLEAR-scaled-removebg-preview.png",
                             Name = "Glass Clear"
                         },
                         new
                         {
                             Id = 7,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_white-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/TPW87fHF/stand-COLORS-white-scaled-removebg-preview.png",
                             Name = "White"
                         },
                         new
                         {
                             Id = 8,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_black-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/76Y3PZ8Q/stand-COLORS-black-scaled-removebg-preview.png",
                             Name = "Black"
                         },
                         new
                         {
                             Id = 9,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_pinkOPAQUE-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/jjvf1Yw6/stand-COLORS-pink-OPAQUE-scaled-removebg-preview.png",
                             Name = "Pink"
                         });
                 });
@@ -349,7 +349,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            OrderDate = new DateTime(2023, 10, 31, 11, 23, 45, 794, DateTimeKind.Local).AddTicks(2167),
+                            OrderDate = new DateTime(2023, 11, 1, 14, 57, 27, 455, DateTimeKind.Local).AddTicks(208),
                             UserProfileId = 1
                         });
                 });
@@ -504,21 +504,21 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_halfNhalfSPLATTER-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png",
                             Name = "BiColor",
                             Price = 50m
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_3colorSPLATTER-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png",
                             Name = "Splatter",
                             Price = 100m
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg",
+                            ImageUrl = "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png",
                             Name = "Swirl",
                             Price = 75m
                         },

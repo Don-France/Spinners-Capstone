@@ -82,11 +82,11 @@ public class SpinnersCapstoneDbContext : IdentityDbContext<IdentityUser>
         modelBuilder.Entity<SpecialEffect>().HasData(new SpecialEffect[]
         {
             new SpecialEffect
-            {Id = 1, Name = "BiColor", Price = 50M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_halfNhalfSPLATTER-scaled.jpg"},
+            {Id = 1, Name = "BiColor", Price = 50M, ImageUrl = "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png"},
             new SpecialEffect
-            {Id = 2, Name = "Splatter", Price = 100M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_3colorSPLATTER-scaled.jpg"},
+            {Id = 2, Name = "Splatter", Price = 100M, ImageUrl = "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png"},
             new SpecialEffect
-            {Id = 3, Name = "Swirl", Price = 75M, ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg"},
+            {Id = 3, Name = "Swirl", Price = 75M, ImageUrl = "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png"},
              new SpecialEffect
             {Id = 4, Name = "None", Price = 0M },
 
@@ -104,23 +104,23 @@ public class SpinnersCapstoneDbContext : IdentityDbContext<IdentityUser>
         modelBuilder.Entity<Color>().HasData(new Color[]
         {
             new Color
-            {Id = 1, Name = "Red", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_redOPAQUE-scaled.jpg"},
+            {Id = 1, Name = "Red", ImageUrl = "https://i.postimg.cc/zvkfbtXp/stand-COLORS-red-OPAQUE-scaled-removebg-preview.png"},
             new Color
-            {Id = 2, Name = "Leaf Green", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_leafGREENopaque-scaled.jpg"},
+            {Id = 2, Name = "Leaf Green", ImageUrl = "https://i.postimg.cc/y8QrCtZK/stand-COLORS-leaf-GREENopaque-scaled-removebg-preview.png"},
             new Color
-            {Id = 3, Name = "Blue", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_blueOPAQUE-scaled.jpg"},
+            {Id = 3, Name = "Blue", ImageUrl = "https://i.postimg.cc/02rwH4PD/stand-COLORS-blue-OPAQUE-scaled-removebg-preview.png"},
             new Color
-            {Id = 4, Name = "Orange", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_orangeTRANSPARENT-scaled.jpg"},
+            {Id = 4, Name = "Orange", ImageUrl = "https://i.postimg.cc/7bvw9bqB/stand-COLORS-orange-OPAQUE-scaled-removebg-preview.png"},
             new Color
-            {Id = 5, Name = "Purple", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_purpleOPAQUE-scaled.jpg"},
+            {Id = 5, Name = "Purple", ImageUrl = "https://i.postimg.cc/xd7f86WD/stand-COLORS-purple-OPAQUE-scaled-removebg-preview.png"},
             new Color
-            {Id = 6, Name = "Glass Clear", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_glassCLEAR-scaled.jpg"},
+            {Id = 6, Name = "Glass Clear", ImageUrl = "https://i.postimg.cc/W3n5Syjx/stand-COLORS-glass-CLEAR-scaled-removebg-preview.png"},
             new Color
-            {Id = 7, Name = "White", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_white-scaled.jpg"},
+            {Id = 7, Name = "White", ImageUrl = "https://i.postimg.cc/TPW87fHF/stand-COLORS-white-scaled-removebg-preview.png"},
             new Color
-            {Id = 8, Name = "Black", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_black-scaled.jpg"},
+            {Id = 8, Name = "Black", ImageUrl = "https://i.postimg.cc/76Y3PZ8Q/stand-COLORS-black-scaled-removebg-preview.png"},
              new Color
-            {Id = 9, Name = "Pink", ImageUrl = "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_pinkOPAQUE-scaled.jpg"},
+            {Id = 9, Name = "Pink", ImageUrl = "https://i.postimg.cc/jjvf1Yw6/stand-COLORS-pink-OPAQUE-scaled-removebg-preview.png"},
 
         });
 

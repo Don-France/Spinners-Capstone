@@ -36,9 +36,9 @@ export default function HomePage({ loggedInUser }) {
                     </Col>
                 </Row>
             </Container>
-            <Container>
-                <Row className="bg-secondary border">
-                    <Col>
+            <Container className='home-about'>
+                <Row >
+                    <Col >
                         <h2>About Our Vinyl Record Pressing</h2>
                         <p>
                             At Spinners Discount Record Pressing, we are passionate about preserving the art of vinyl records and specialize in catering to up and coming artists.
