@@ -302,27 +302,27 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "16315dde-c9c8-43a5-9cde-e2b8b6e537b4", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "513328e4-6e6a-48ae-aefe-013ec67ac329", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "3fcecba1-c632-41c4-8860-239001ffa25f", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEP4YdpLkWhI9lQfnfuipnd8+/6QjYOxinMIgbX3eUJhBoFkwEqGAffLNo351+TQBvA==", null, false, "6cfe213b-45fd-4799-829d-30404fc6dda7", false, "Administrator" });
+                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "c673cfc0-ce42-475f-ae81-92d424aa132b", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEOCxM3zj2VxyEFZlaSVfcxGbZ1aFVCBVjq+fvo1LPPN8HTmv+fvy/ceQQR8Aa0YcOw==", null, false, "0145653c-9fbe-4b81-8e13-b8806e197342", false, "Administrator" });
 
             migrationBuilder.InsertData(
                 table: "Colors",
                 columns: new[] { "Id", "ImageUrl", "Name" },
                 values: new object[,]
                 {
-                    { 1, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_redOPAQUE-scaled.jpg", "Red" },
-                    { 2, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_leafGREENopaque-scaled.jpg", "Leaf Green" },
-                    { 3, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_blueOPAQUE-scaled.jpg", "Blue" },
-                    { 4, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_orangeTRANSPARENT-scaled.jpg", "Orange" },
-                    { 5, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_purpleOPAQUE-scaled.jpg", "Purple" },
-                    { 6, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_glassCLEAR-scaled.jpg", "Glass Clear" },
-                    { 7, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_white-scaled.jpg", "White" },
-                    { 8, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_black-scaled.jpg", "Black" },
-                    { 9, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_pinkOPAQUE-scaled.jpg", "Pink" }
+                    { 1, "https://i.postimg.cc/zvkfbtXp/stand-COLORS-red-OPAQUE-scaled-removebg-preview.png", "Red" },
+                    { 2, "https://i.postimg.cc/y8QrCtZK/stand-COLORS-leaf-GREENopaque-scaled-removebg-preview.png", "Leaf Green" },
+                    { 3, "https://i.postimg.cc/02rwH4PD/stand-COLORS-blue-OPAQUE-scaled-removebg-preview.png", "Blue" },
+                    { 4, "https://i.postimg.cc/7bvw9bqB/stand-COLORS-orange-OPAQUE-scaled-removebg-preview.png", "Orange" },
+                    { 5, "https://i.postimg.cc/xd7f86WD/stand-COLORS-purple-OPAQUE-scaled-removebg-preview.png", "Purple" },
+                    { 6, "https://i.postimg.cc/W3n5Syjx/stand-COLORS-glass-CLEAR-scaled-removebg-preview.png", "Glass Clear" },
+                    { 7, "https://i.postimg.cc/TPW87fHF/stand-COLORS-white-scaled-removebg-preview.png", "White" },
+                    { 8, "https://i.postimg.cc/76Y3PZ8Q/stand-COLORS-black-scaled-removebg-preview.png", "Black" },
+                    { 9, "https://i.postimg.cc/jjvf1Yw6/stand-COLORS-pink-OPAQUE-scaled-removebg-preview.png", "Pink" }
                 });
 
             migrationBuilder.InsertData(
@@ -339,9 +339,9 @@ namespace Spinners_Capstone.Migrations
                 columns: new[] { "Id", "ImageUrl", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_halfNhalfSPLATTER-scaled.jpg", "BiColor", 50m },
-                    { 2, "https://www.furnacemfg.com/wp-content/uploads/2023/07/standCOLORS_3colorSPLATTER-scaled.jpg", "Splatter", 100m },
-                    { 3, "https://www.furnacemfg.com/wp-content/uploads/2023/07/mixedCOLORS_blueWHO-scaled.jpg", "Swirl", 75m },
+                    { 1, "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png", "BiColor", 50m },
+                    { 2, "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png", "Splatter", 100m },
+                    { 3, "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png", "Swirl", 75m },
                     { 4, null, "None", 0m }
                 });
 
@@ -358,7 +358,7 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "OrderDate", "UserProfileId" },
-                values: new object[] { 1, new DateTime(2023, 10, 31, 11, 23, 45, 794, DateTimeKind.Local).AddTicks(2167), 1 });
+                values: new object[] { 1, new DateTime(2023, 11, 1, 14, 57, 27, 455, DateTimeKind.Local).AddTicks(208), 1 });
 
             migrationBuilder.InsertData(
                 table: "Records",

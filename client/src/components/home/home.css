@@ -2,27 +2,14 @@
     border: 1px dotted red;
 } */
 
-/* .mt-5 { 
-     background-color: rgb(208, 214, 219); 
-     display: flex; 
-    
-   
- } */
-
-/* .mt-3 {
-    width: 300px;
-    height: 300px;
-} */
-/* Add this to your CSS file (orders.css) or a custom CSS file */
-/* .recordImageCard img {
-   mix-blend-mode: multiply;
-} */
-/* .color-card-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.home-about {
+    font-family: cursive;
+    font-weight:900;
+    background-color:darkgrey;
+    border-radius: 10px;
 }
-.record-image {
-    mix-blend-mode: multiply; 
-   text-align: center;
-} */
+p {
+    font-family: 'Roboto';
+    font-size:large;
+    color:color-mix(in srgb, color percentage, color percentage);
+}

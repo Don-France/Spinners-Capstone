@@ -13,7 +13,7 @@ export default function SpecialEffectCard({ specialEffect }) {
         return null;
     }
     return (
-        <Card className="mb-3 mt-3 text-center" style={{ margin: 'auto' }}>
+        <Card className="mb-3 mt-3 text-center" style={{ margin: 'auto' }} color="transparent" inverse>
             <CardImg top width="100%" src={specialEffect.imageUrl} alt={specialEffect.name} />
             <CardBody>
                 <CardTitle>{specialEffect.name}</CardTitle>

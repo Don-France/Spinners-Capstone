@@ -13,6 +13,7 @@ import {
     Col,
     Button
 } from 'reactstrap';
+import './orders.css';
 
 
 
@@ -88,24 +89,26 @@ export default function EditRecordInOrder({ loggedInUser }) {
                 <Form className='create-order'>
                     <Container>
                         <h3>Selected Colors:</h3>
-                        <Row className="bg-secondary border"
+                        <Row className="color-background"
                             fluid="sm">
                             {colors.map((colorOption) => (
                                 <Col key={colorOption.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
                                     <div className="color-card-section">
                                         <ColorForRecordsImageCard color={colorOption} className="record-image" />
+
+                                        <FormGroup check className='checkbox-container'>
+                                            <Label check className='label-color'>
+                                                <Input
+                                                    type="checkbox"
+                                                    id={`color-${colorOption.id}`}
+                                                    value={colorOption.id}
+                                                    checked={record.recordColors.some(color => color.colorId === colorOption.id)}
+                                                    onChange={handleColorChange}
+                                                />
+                                                {colorOption.name}
+                                            </Label>
+                                        </FormGroup>
                                     </div>
-                                    <FormGroup check>
-                                        <Label check>
-                                            <Input
-                                                type="checkbox"
-                                                id={`color-${colorOption.id}`}
-                                                value={colorOption.id}
-                                                checked={record.recordColors.some(color => color.colorId === colorOption.id)}
-                                                onChange={handleColorChange}
-                                            />
-                                        </Label>
-                                    </FormGroup>
                                 </Col>
                             ))}
                         </Row>
@@ -114,7 +117,7 @@ export default function EditRecordInOrder({ loggedInUser }) {
                     <Container>
 
                         <h3>Selected Weight:</h3>
-                        <Input type="select" id="weight" value={record.recordWeightId} onChange={handleRecordWeightChange}>
+                        <Input type="select" id="weight" value={record.recordWeightId} onChange={handleRecordWeightChange} className='custom-select'>
                             <option value="1">130 grams</option>
                             <option value="2">180 grams</option>
                         </Input>
@@ -124,14 +127,14 @@ export default function EditRecordInOrder({ loggedInUser }) {
                     <Container>
 
                         <h3>Quantity:</h3>
-                        <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} />
+                        <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} className='custom-select' />
 
                     </Container>
 
                     <Container>
 
                         <h3>Selected Special Effect:</h3>
-                        <Input type="select" id="specialEffect" value={record.specialEffectId} onChange={handleRecordSpecialEffectChange}>
+                        <Input type="select" id="specialEffect" value={record.specialEffectId} onChange={handleRecordSpecialEffectChange} className='custom-select'>
                             <option value="1">BiColor</option>
                             <option value="2">Splatter</option>
                             <option value="3">Swirl</option>
@@ -140,14 +143,14 @@ export default function EditRecordInOrder({ loggedInUser }) {
 
                     </Container>
 
-                    <Container>
-                        <Row className="mt-0">
-                            <Col className="d-flex justify-content-center">
-                                <Button color="primary" onClick={handleRecordUpdate}>Update Record</Button>
-                            </Col>
-                        </Row>
-                    </Container>
                 </Form>
+                <Container>
+                    <Row className="mt-3">
+                        <Col className="d-flex justify-content-center">
+                            <Button color="primary" onClick={handleRecordUpdate}>Update Record</Button>
+                        </Col>
+                    </Row>
+                </Container>
             </Container>
         </div>
     );

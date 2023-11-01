@@ -11,6 +11,7 @@ import {
     Form,
     Container, Row, Col
 } from 'reactstrap';
+import './orders.css';
 
 
 
@@ -19,8 +20,8 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
     const [colors, setColors] = useState([]); // State for color option
 
     const [record, setRecord] = useState({
-        recordWeightId: 1,
-        specialEffectId: 1,
+        recordWeightId: 0,
+        specialEffectId: 0,
         recordColors: [],
         quantity: 50
     });
@@ -75,6 +76,20 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
             alert('Minimum quantity should be 50');
             return; // Prevent further action due to invalid quantity
         }
+        if (record.recordColors.length === 0) {
+            alert('Please choose at least one color');
+            return; // Prevent further action if color is not selected
+        }
+
+        if (record.recordWeightId === 0) {
+            alert('Please select a weight');
+            return; // Prevent further action if weight is not selected
+        }
+
+        if (record.specialEffectId === 0) {
+            alert('Please select a special effect');
+            return; // Prevent further action if special effect is not selected
+        }
 
 
 
@@ -107,24 +122,25 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                 <Form className='create-order'>
                     <Container>
                         <h3>Select Color:</h3>
-                        <Row className="bg-secondary border"
+                        <Row className="color-background"
                             fluid="sm">
                             {colors.map((colorOption) => (
                                 <Col key={colorOption.id} sm={6} md={4} lg={3} style={{ margin: 'auto' }}>
                                     <div className="color-card-section">
                                         <ColorForRecordsImageCard color={colorOption} className="record-image" />
-                                    </div>  {/* ColorForRecordsImageCard component */}
-                                    <FormGroup check>
-                                        <Label check>
-                                            <Input
-                                                type="checkbox"
-                                                id={`color-${colorOption.id}`}
-                                                value={colorOption.id}
-                                                onChange={handleColorChange}
-                                            />
-                                            {colorOption.name}
-                                        </Label>
-                                    </FormGroup>
+
+                                        <FormGroup check className='checkbox-container'>
+                                            <Label check className='label-color'>
+                                                <Input
+                                                    type="checkbox"
+                                                    id={`color-${colorOption.id}`}
+                                                    value={colorOption.id}
+                                                    onChange={handleColorChange}
+                                                />
+                                                {colorOption.name}
+                                            </Label>
+                                        </FormGroup>
+                                    </div>
                                 </Col>
                             ))}
                         </Row>
@@ -137,6 +153,7 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                             name="select"
                             id="weight"
                             onChange={handleRecordWeightChange}
+                            className='custom-select'
                         >
                             <option value="0">Please select a weight</option>
                             <option value="1">130 grams</option>
@@ -151,6 +168,7 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                             id="quantity"
                             min="50"
                             onChange={handleQuantityChange}
+                            className='custom-select'
                         />
                     </Container>
 
@@ -161,6 +179,7 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                             name="select"
                             id="specialEffect"
                             onChange={handleRecordSpecialEffectChange}
+                            className='custom-select'
                         >
                             <option value="0">Special Effects</option>
                             <option value="1">BiColor</option>
@@ -170,16 +189,16 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
                         </Input>
                     </Container>
 
-                    <Container>
-                        <Row className="mt-0">
-                            <Col className="d-flex justify-content-center">
-                                <Button color="primary" onClick={handleOrderSubmit}>
-                                    View Your Order Details
-                                </Button>
-                            </Col>
-                        </Row>
-                    </Container>
                 </Form>
+                <Container>
+                    <Row className="mt-3">
+                        <Col className="d-flex justify-content-center">
+                            <Button color="primary" onClick={handleOrderSubmit}>
+                                View Your Order Details
+                            </Button>
+                        </Col>
+                    </Row>
+                </Container>
             </Container>
         </div>
     );
