@@ -74,19 +74,19 @@ public class SpinnersCapstoneDbContext : IdentityDbContext<IdentityUser>
         modelBuilder.Entity<RecordWeight>().HasData(new RecordWeight[]
         {
             new RecordWeight
-            {Id = 1, Weight = 130, Price = 50M},
+            {Id = 1, Weight = 130, Price = 5M},
             new RecordWeight
-            {Id = 2, Weight = 180, Price = 75M}
+            {Id = 2, Weight = 180, Price = 7.5M}
         });
 
         modelBuilder.Entity<SpecialEffect>().HasData(new SpecialEffect[]
         {
             new SpecialEffect
-            {Id = 1, Name = "BiColor", Price = 50M, ImageUrl = "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png"},
+            {Id = 1, Name = "BiColor", Price = 1M, ImageUrl = "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png"},
             new SpecialEffect
-            {Id = 2, Name = "Splatter", Price = 100M, ImageUrl = "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png"},
+            {Id = 2, Name = "Splatter", Price = 2M, ImageUrl = "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png"},
             new SpecialEffect
-            {Id = 3, Name = "Swirl", Price = 75M, ImageUrl = "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png"},
+            {Id = 3, Name = "Swirl", Price = 1.5M, ImageUrl = "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png"},
              new SpecialEffect
             {Id = 4, Name = "None", Price = 0M },
 

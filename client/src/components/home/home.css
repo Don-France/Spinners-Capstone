@@ -13,3 +13,7 @@ p {
     font-size:large;
     color:color-mix(in srgb, color percentage, color percentage);
 }
+h1 {
+    font-weight: bolder;
+    font-family:sans-serif;
+}

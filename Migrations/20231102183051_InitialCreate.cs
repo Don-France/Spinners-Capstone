@@ -302,12 +302,12 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "513328e4-6e6a-48ae-aefe-013ec67ac329", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "adb4b6f4-93e9-4664-8d7e-00939dba8c4c", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "c673cfc0-ce42-475f-ae81-92d424aa132b", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEOCxM3zj2VxyEFZlaSVfcxGbZ1aFVCBVjq+fvo1LPPN8HTmv+fvy/ceQQR8Aa0YcOw==", null, false, "0145653c-9fbe-4b81-8e13-b8806e197342", false, "Administrator" });
+                values: new object[] { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "404f19bf-b46b-4388-a078-f424f73b71fd", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEKPq2H2x7r+0KEMfDo/XaVJAhXN5AySavBdAHC9m/6AqyQ1+ScctEFF2TocY1osOjw==", null, false, "3e3d75d4-f559-4758-8674-e80d88e9bfa3", false, "Administrator" });
 
             migrationBuilder.InsertData(
                 table: "Colors",
@@ -330,8 +330,8 @@ namespace Spinners_Capstone.Migrations
                 columns: new[] { "Id", "Price", "Weight" },
                 values: new object[,]
                 {
-                    { 1, 50m, 130 },
-                    { 2, 75m, 180 }
+                    { 1, 5m, 130 },
+                    { 2, 7.5m, 180 }
                 });
 
             migrationBuilder.InsertData(
@@ -339,9 +339,9 @@ namespace Spinners_Capstone.Migrations
                 columns: new[] { "Id", "ImageUrl", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png", "BiColor", 50m },
-                    { 2, "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png", "Splatter", 100m },
-                    { 3, "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png", "Swirl", 75m },
+                    { 1, "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png", "BiColor", 1m },
+                    { 2, "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png", "Splatter", 2m },
+                    { 3, "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png", "Swirl", 1.5m },
                     { 4, null, "None", 0m }
                 });
 
@@ -358,7 +358,7 @@ namespace Spinners_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "OrderDate", "UserProfileId" },
-                values: new object[] { 1, new DateTime(2023, 11, 1, 14, 57, 27, 455, DateTimeKind.Local).AddTicks(208), 1 });
+                values: new object[] { 1, new DateTime(2023, 11, 2, 13, 30, 51, 48, DateTimeKind.Local).AddTicks(967), 1 });
 
             migrationBuilder.InsertData(
                 table: "Records",

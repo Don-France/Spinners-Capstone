@@ -50,8 +50,7 @@ export default function RecordOrderForm({ loggedInUser }) {
 
         }
         setRecord(record)
-        console.log(record.recordColors);
-        console.log(record)
+
     };
 
     const handleRecordWeightChange = (event) => {
@@ -112,13 +111,18 @@ export default function RecordOrderForm({ loggedInUser }) {
     return (
         <div>
             <Container>
-                <h2>Start Your Order</h2>
+                <h1>Start Your Order Here</h1>
             </Container>
 
             <Container>
                 <Form className='create-order'>
                     <Container>
                         <h3>Select Color/s:</h3>
+                        <h4>Recomendations when choosing colors with Special Effects:</h4>
+                        <p>Bi-Color: Two colors</p>
+                        <p>Splatter: Three to Five colors</p>
+                        <p>Swirl: Two to Three colors</p>
+                        <p>None: One color</p>
                         <Row className="color-background"
                             fluid="sm">
                             {colors.map((colorOption) => (
@@ -162,6 +166,7 @@ export default function RecordOrderForm({ loggedInUser }) {
 
                     <Container>
                         <h3>Quantity:</h3>
+                        <h5>Miniumum Order 50 Records</h5>
                         <Input
                             type="number"
                             id="quantity"

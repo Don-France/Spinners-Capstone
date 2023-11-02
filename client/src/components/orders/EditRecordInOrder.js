@@ -82,7 +82,7 @@ export default function EditRecordInOrder({ loggedInUser }) {
     return (
         <div>
             <Container>
-                <h2>Edit Record Order</h2>
+                <h2>Edit Your Order</h2>
             </Container>
 
             <Container>
@@ -127,6 +127,7 @@ export default function EditRecordInOrder({ loggedInUser }) {
                     <Container>
 
                         <h3>Quantity:</h3>
+                        <h5>Miniumum Order 50 Records</h5>
                         <Input type="number" id="quantity" min="50" value={record.quantity} onChange={handleQuantityChange} className='custom-select' />
 
                     </Container>
