@@ -5,7 +5,7 @@ export const getUserProfiles = () => {
 };
 
 export const getUserProfileById = (id) => {
-    console.log(id);
+
     return fetch(`${_apiUrl}/${id}`)
         .then((res) => {
             if (!res.ok) {

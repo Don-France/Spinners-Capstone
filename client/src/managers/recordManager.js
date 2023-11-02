@@ -35,7 +35,7 @@ export const createRecord = async (newRecord) => {
 
 // Add a record to an order
 export const addRecord = (id, newRecord) => {
-    console.log(newRecord)
+
 
     return fetch(`${_apiUrl}/${id}/add`, {
         method: 'POST',

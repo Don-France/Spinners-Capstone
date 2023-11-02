@@ -163,6 +163,7 @@ export default function AddARecordToAnOrder({ loggedInUser }) {
 
                     <Container>
                         <h3>Quantity:</h3>
+                        <h5>Miniumum Order 50 Records</h5>
                         <Input
                             type="number"
                             id="quantity"

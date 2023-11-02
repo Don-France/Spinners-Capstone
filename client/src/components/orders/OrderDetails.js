@@ -50,77 +50,62 @@ export default function OrderDetails() {
     }
 
     return (
-        <>
-            <h2>Order Details</h2>
-            <Card color="secondary" inverse>
-                <CardBody>
-                    <CardTitle tag="h4">Order Number: {order.id + 1912345000}</CardTitle>
-                    <CardText>
-                        Order Date: {new Date(order.orderDate).toLocaleDateString()}
-                    </CardText>
-                    <CardText>Total: ${order?.total + 750}</CardText>
-                    <Button
-                        color="info"
-                        onClick={() => {
-                            navigate(`/addtoorder/${id}`);
-                        }}
-                    >
-                        Add More Records
-                    </Button>
-                    <Button
-                        color="success"
-                        style={{ marginLeft: "8px" }}
-                        onClick={() => {
-                            if (userProfileId) {
-                                navigate(`/orders/${id}/${userProfileId}/confirmation`);
-                            }
-                        }}
-                    >
-                        Submit Your Order
-                    </Button>
-
-                </CardBody>
-
-            </Card>
-            <h4>Records</h4>
-            {order?.records?.map((records, index) => (
-                <Card
-
-                    // outline="true"
-                    color="secondary"
-                    key={index}
-                    style={{ marginBottom: "4px" }}
-                >
+        <div style={{ overflowX: "auto" }}>
+            <div style={{ textAlign: "center" }}>
+                <h1>Order Details</h1>
+                <Card color="secondary" inverse>
                     <CardBody>
-                        <CardTitle tag="h5">Record: {index + 1}</CardTitle>
-                        <CardText>Weight: {records?.recordWeight?.weight} grams</CardText>
-                        <CardText>Special Effect: {records?.specialEffect?.name}</CardText>
-                        <CardText>Colors: {records?.recordColors?.map((recordColor) => (
-                            <div key={recordColor.color.id}>
-                                {recordColor.color.name}
-                            </div>
-                        ))}</CardText>
-                        <CardText>Quantity: {records?.quantity}</CardText>
-
-                        <Button
-                            color="warning"
-                            onClick={() => {
-                                navigate(`/updateorder/${order.id}/${records.id}`);
-                            }}
-                        >
-                            Update This Record
+                        <CardTitle tag="h4">Order Number: {order.id + 1912345000}</CardTitle>
+                        <CardText>Order Date: {new Date(order.orderDate).toLocaleDateString()}</CardText>
+                        <CardText>Total: ${order?.total + 750} (+ tax)</CardText>
+                        <CardText>Total includes a $750.00 fee for press plate setup!</CardText>
+                        <Button color="info" onClick={() => navigate(`/addtoorder/${id}`)}>
+                            Add More Albums
                         </Button>
                         <Button
-                            onClick={() => deleteRecord(records.id)}
-                            color="danger"
-                            style={{ marginLeft: "8px" }} // Add left margin for spacing
+                            color="success"
+                            style={{ marginLeft: "15px" }}
+                            onClick={() => {
+                                if (userProfileId) {
+                                    navigate(`/orders/${id}/${userProfileId}/confirmation`);
+                                }
+                            }}
                         >
-                            Delete
+                            Submit Your Order
                         </Button>
                     </CardBody>
                 </Card>
-            ))}
-        </>
+            </div>
+            <h4 className="album-header" style={{ textAlign: "center" }}>
+                Albums
+            </h4>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "20px", padding: "10px" }}>
+                {order?.records?.map((records, index) => (
+                    <Card color="secondary" inverse key={index} style={{ width: "300px", margin: "10px" }}>
+                        <CardBody>
+                            <CardTitle tag="h5">Record: {index + 1}</CardTitle>
+                            <CardText>Weight: {records?.recordWeight?.weight} grams</CardText>
+                            <CardText>Special Effect: {records?.specialEffect?.name}</CardText>
+                            <CardText>
+                                Colors: {records?.recordColors?.map((recordColor) => (
+                                    <div key={recordColor.color.id}>{recordColor.color.name}</div>
+                                ))}
+                            </CardText>
+                            <CardText>Quantity: {records?.quantity}</CardText>
+                            <Button color="info" onClick={() => navigate(`/updateorder/${order.id}/${records.id}`)}>
+                                Update This Album
+                            </Button>
+                            <Button
+                                onClick={() => deleteRecord(records.id)}
+                                color="danger"
+                                style={{ marginLeft: "8px" }}
+                            >
+                                Delete
+                            </Button>
+                        </CardBody>
+                    </Card>
+                ))}
+            </div>
+        </div>
     );
-
 };

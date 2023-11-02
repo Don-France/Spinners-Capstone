@@ -51,7 +51,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "513328e4-6e6a-48ae-aefe-013ec67ac329",
+                            ConcurrencyStamp = "adb4b6f4-93e9-4664-8d7e-00939dba8c4c",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -150,13 +150,13 @@ namespace Spinners_Capstone.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c673cfc0-ce42-475f-ae81-92d424aa132b",
+                            ConcurrencyStamp = "404f19bf-b46b-4388-a078-f424f73b71fd",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOCxM3zj2VxyEFZlaSVfcxGbZ1aFVCBVjq+fvo1LPPN8HTmv+fvy/ceQQR8Aa0YcOw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKPq2H2x7r+0KEMfDo/XaVJAhXN5AySavBdAHC9m/6AqyQ1+ScctEFF2TocY1osOjw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0145653c-9fbe-4b81-8e13-b8806e197342",
+                            SecurityStamp = "3e3d75d4-f559-4758-8674-e80d88e9bfa3",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         });
@@ -349,7 +349,7 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            OrderDate = new DateTime(2023, 11, 1, 14, 57, 27, 455, DateTimeKind.Local).AddTicks(208),
+                            OrderDate = new DateTime(2023, 11, 2, 13, 30, 51, 48, DateTimeKind.Local).AddTicks(967),
                             UserProfileId = 1
                         });
                 });
@@ -468,13 +468,13 @@ namespace Spinners_Capstone.Migrations
                         new
                         {
                             Id = 1,
-                            Price = 50m,
+                            Price = 5m,
                             Weight = 130
                         },
                         new
                         {
                             Id = 2,
-                            Price = 75m,
+                            Price = 7.5m,
                             Weight = 180
                         });
                 });
@@ -506,21 +506,21 @@ namespace Spinners_Capstone.Migrations
                             Id = 1,
                             ImageUrl = "https://i.postimg.cc/Zn8S5J57/stand-COLORS-half-Nhalf-scaled-removebg-preview.png",
                             Name = "BiColor",
-                            Price = 50m
+                            Price = 1m
                         },
                         new
                         {
                             Id = 2,
                             ImageUrl = "https://i.postimg.cc/Y2zDMdNq/stand-COLORS-3color-SPLATTER-scaled-removebg-preview.png",
                             Name = "Splatter",
-                            Price = 100m
+                            Price = 2m
                         },
                         new
                         {
                             Id = 3,
                             ImageUrl = "https://i.postimg.cc/hG8TT5tX/mixed-COLORS-blue-WHO-scaled-removebg-preview.png",
                             Name = "Swirl",
-                            Price = 75m
+                            Price = 1.5m
                         },
                         new
                         {
